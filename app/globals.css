@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #ffffff
+}
+
+section.hero{
+    @apply block md:grid;
+    grid-template-columns: .4fr .6fr;
+}
+select,
+input[type="email"],
+input[type="password"],
+input[type="text"], input[type="tel"] {
+    @apply block w-full rounded-xl mb-2;
+    @apply border border-gray-300 focus:outline-none focus:ring-0 focus:border-hunter;
+    @apply p-2 bg-gray-200;
+}
+
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="text"]:disabled, input[type="tel"]:disabled {
+    @apply bg-dis text-gray-500 border-0;
+    @apply cursor-not-allowed;
+}
+
+label{
+   @apply text-gray-500 text-sm leading-tight;
+}
+
+label + input{
+    margin-top: -2px;
+}
+button, .button{
+    @apply flex justify-center gap-2 block w-full text-gray-600 font-semibold;
+    @apply border border-gray-300 rounded-xl px-6 py-2;
+    /* @layer rounded-2xl */
+}
+
+button[type="submit"], .submit{
+    @apply border-primary bg-primary hover:bg-hoverbutton text-white;
+    @apply rounded-xl;
+}
+
+button[type="submit"]:disabled, .submit:disabled{
+    /* @apply border-0 bg-primary hover:bg-hoverbutton text-white; */
+    @apply cursor-not-allowed bg-gray-500 ;
+    /* @layer bg-back-300; */
+}
+div.tabs > * {
+    @apply bg-dis border text-primary rounded-full py-2 px-4;
+    @apply hover:bg-primary hover:text-white;
+}
+div.tabs > *.active{
+    @apply bg-primary text-white hover:bg-hoverbutton;
+}
+
+.flying-button-parent button{
+   @apply bg-primary text-white text-sm  px-9 py-2 mt-1;
+   @apply hover:bg-hoverbutton rounded-full
+}

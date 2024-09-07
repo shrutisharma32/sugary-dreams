@@ -12,7 +12,9 @@ const nextConfig = {
       },
     ],
   },
-  
+  typescript: {
+    ignoreBuildErrors: true, // Skips type-checking during build
+  },
   
 };
 

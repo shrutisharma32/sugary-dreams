@@ -3,7 +3,7 @@ import { CartContext } from "../AppContext"
 import MenuItemTile from './MenuItemTile';
 import toast from "react-hot-toast";
 import Image from "next/image";
-import FlyingButton from 'react-flying-item'
+// import FlyingButton from 'react-flying-item'
 
 export default function MenuItem(menuItem) {
     const {
@@ -73,8 +73,8 @@ export default function MenuItem(menuItem) {
                                     <h3 className="text-gray-600 mb-1 font-bold text-center">Pick your size</h3>
                                     {sizes.map(size => (
                                         <label
-                                        key={size._id}
-                                         className="flex items-center gap-2 p-3 border rounded-md ">
+                                            key={size._id}
+                                            className="flex items-center gap-2 p-3 border rounded-md ">
                                             <input
                                                 type="radio"
                                                 name="size"
@@ -105,14 +105,25 @@ export default function MenuItem(menuItem) {
 
                                 </div>
                             )}
-                            <FlyingButton targetTop={'5%'} targetLeft={'95%'} src={image}>
+                            {/* <FlyingButton targetTop={'5%'} targetLeft={'95%'} src={image}>
 
                                 <div className="sticky button bottom-2"
                                     onClick={handleAddToCartButtonClick}>
                                     Add to cart ₹{selectedPrice}
                                 </div>
 
-                            </FlyingButton>
+                            </FlyingButton> */}
+            
+
+                            <div className="">
+                                <button
+                                    type="button"
+                                    className=" bg-primary text-white text-sm hover:bg-hoverbutton rounded-full px-9 py-2 mt-1 flex items-center"
+                                    onClick={handleAddToCartButtonClick}
+                                >
+                                    Add to cart ₹{selectedPrice}
+                                </button>
+                            </div>
 
                             <button className="mt-2" type="button" onClick={() => setShowPopup(false)}>
                                 Cancel
